@@ -1,4 +1,4 @@
-<div class="flex justify-between text-white px-16">
+<div class="flex justify-between text-white px-16 my-10">
   <div class="w-2/5">
     <h3>Credits</h3>
     <div class="flex justify-between m-2">
