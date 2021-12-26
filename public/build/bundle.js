@@ -6878,7 +6878,7 @@ var app = (function () {
     	return block;
     }
 
-    // (12:31)    {console.log(itemKey)}
+    // (11:31)    {console.log(itemKey)}
     function create_then_block(ctx) {
     	let t0_value = console.log(/*itemKey*/ ctx[2]) + "";
     	let t0;
@@ -6904,7 +6904,7 @@ var app = (function () {
     		block,
     		id: create_then_block.name,
     		type: "then",
-    		source: "(12:31)    {console.log(itemKey)}",
+    		source: "(11:31)    {console.log(itemKey)}",
     		ctx
     	});
 
@@ -6949,7 +6949,7 @@ var app = (function () {
     			t = space();
     			div = element("div");
     			attr_dev(div, "class", "w-full h-screen relative");
-    			add_location(div, file$1, 16, 0, 284);
+    			add_location(div, file$1, 15, 0, 258);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
