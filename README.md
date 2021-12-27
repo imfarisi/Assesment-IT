@@ -110,5 +110,5 @@ npm run build
 ## Link Assesment
 
 ```
-https://assesment-iqbal-cnt.netlify.app/movie
+https://assesment-iqbal-cnt.netlify.app
 ```
