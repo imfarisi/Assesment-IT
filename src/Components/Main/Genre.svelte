@@ -51,7 +51,7 @@
   </div>
 
   <div
-    class="w-full flex gap-2 lg:gap-12 snap-x overflow-x-auto my-10"
+    class="w-full flex gap-2 lg:gap-12 snap-x overflow-x-auto my-10 hide-scroll"
     bind:this={box}
     on:scroll={scrollMovies}
   >
@@ -60,9 +60,7 @@
         class="snap-start scroll-ml-6 shrink-0 relative first:pl-5 last:pr-5 lg:first:pl-20 lg:last:pr-20"
       >
         <a
-          href={`/movies/${res.id}/${encodeURIComponent(
-            res.title.toLowerCase().replace(/ /g, "-")
-          )}`}
+          href={`/movies/${res.id}`}
         >
           <img
             class="lg:rounded-3xl filter brightness-75 w-[126px] md:w-[269px] h-[189px] md:h-[403px] rounded-xl"

@@ -10,8 +10,9 @@
   import { getMovies } from "../api/getMovies";
   export let params, currentRoute;
   import Genre from "../Components/Main/Genre.svelte";
+  import { slide } from "svelte/transition";
 
-  let dataMovie = getMovie(currentRoute.path);
+  // let dataMovie = getMovie(currentRoute.path);
   let listGenreIds = [16, 12, 28];
   let listGenre = ["Animated", "Adventure", "Super Hero"];
   let datas = [];
@@ -32,21 +33,26 @@
 </script>
 
 {#await data}
-  <p>...waiting</p>
+  <!-- <p>...waiting</p> -->
 {:then items}
   <div class="py-20">
-    <div class="w-full flex gap-8 snap-x overflow-x-auto px-10 lg:px-20">
+    <div
+      class="w-full flex gap-8 snap-x overflow-x-auto px-10 md:px-20 hide-scroll"
+      transition:slide
+    >
       {#each items.results.slice(0, 5) as res}
         <div class="snap-center scroll-ml-6 shrink-0 relative w-full ">
-          <img
-            class="rounded-lg lg:rounded-3xl px-0 filter brightness-75"
-            src="https://image.tmdb.org/t/p/original/{res.backdrop_path}"
-            alt="poster"
-          />
+          <a href={`/movies/${res.id}?play=1`}>
+            <img
+              class="rounded-lg md:rounded-3xl px-0 filter brightness-75"
+              src="https://image.tmdb.org/t/p/original/{res.backdrop_path}"
+              alt="poster"
+            />
+          </a>
           <div
-            class="absolute w-full px-10 lg:px-20 pt-10 lg:pt-20 bottom-0 bg-gradient-to-t from-gray-900 rounded-3xl text-white"
+            class="absolute w-full px-10 md:px-20 pt-10 md:pt-20 bottom-0 bg-gradient-to-t from-gray-900 rounded-3xl text-white"
           >
-            <div class=" hidden lg:block w-3/6 py-24">
+            <div class=" hidden md:block w-3/6 py-24">
               <h3 class="font-semibold text-white mb-4 text-3xl">
                 {res.original_title}
               </h3>
@@ -61,13 +67,14 @@
                 <Dolby2Icon />
               </div>
               <div class="flex space-x-4 flex-row w-full">
-                <button
+                <a
+                  href={`/movies/${res.id}?play=1`}
                   class=" px-3 mt-5 items-center shadow-md rounded-lg bg-red-600  space-x-2 py-4 justify-center flex w-56"
                 >
                   <span class="text-white font-semibold text-xl">Watch Now</span
                   >
                   <PlayButton />
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -78,14 +85,14 @@
 {/await}
 
 {#await data}
-  <p>...waiting</p>
+  <!-- <p>...waiting</p> -->
 {:then items}
   <div class="">
     <div class="flex justify-between">
       <div>
-        <p class="text-white m-5 text-4xl font-bold lg:px-16">Best of all</p>
+        <p class="text-white m-5 text-4xl font-bold md:px-16">Best of all</p>
       </div>
-      <div class="mx-10 lg:mx-20">
+      <div class="mx-10 md:mx-20">
         <button
           class="p-4 rounded-md button-next-previous"
           disabled={x == 0}
@@ -114,21 +121,23 @@
       </div>
     </div>
     <div
-      class="w-full flex gap-2 lg:gap-12 snap-x overflow-x-auto my-10 "
+      class="w-full flex gap-2 md:gap-12 snap-x overflow-x-auto my-10 hide-scroll"
       bind:this={box}
       on:scroll={scroll}
     >
       {#each items.results as res}
         <div
-          class="snap-start scroll-ml-6 shrink-0 relative first:pl-5 last:pr-5 lg:first:pl-20 lg:last:pr-20 "
+          class="snap-start scroll-ml-6 shrink-0 relative first:pl-5 last:pr-5 md:first:pl-20 md:last:pr-20 "
         >
-          <img
-            class="lg:rounded-3xl filter brightness-75 w-[126px] md:w-[269px] h-[189px] md:h-[403px] rounded-xl"
-            width="269"
-            height="403"
-            src="https://image.tmdb.org/t/p/original/{res.poster_path}"
-            alt="poster"
-          />
+          <a href={`/movies/${res.id}`}>
+            <img
+              class="md:rounded-3xl filter brightness-75 w-[126px] md:w-[269px] h-[189px] md:h-[403px] rounded-xl"
+              width="269"
+              height="403"
+              src="https://image.tmdb.org/t/p/original/{res.poster_path}"
+              alt="poster"
+            />
+          </a>
         </div>
       {/each}
     </div>
@@ -137,8 +146,8 @@
 
 {#each datas as dataGenre, i}
   {#await dataGenre}
-    <p>...waiting</p>
+    <!-- <p>...waiting</p> -->
   {:then items}
-    <Genre {items} title={listGenre[i]} {dataMovie} />
+    <Genre {items} title={listGenre[i]} />
   {/await}
 {/each}

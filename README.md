@@ -105,3 +105,10 @@ npm run dev
 ```bash
 npm run build
 ```
+
+
+## Link Assesment
+
+```
+https://assesment-iqbal-cnt.netlify.app/movie
+```

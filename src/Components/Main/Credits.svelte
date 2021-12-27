@@ -1,23 +1,26 @@
-<div class="flex justify-between text-white px-16 my-10">
-  <div class="w-2/5">
-    <h3>Credits</h3>
-    <div class="flex justify-between m-2">
-      <div class="w-20">
-        <img
-          class="object-cover object-center rounded-full w-8 h-8"
-          src="https://storage.googleapis.com/donol.rumahzakat.org/images/20211208_024611.jpeg"
-          alt="img-netflix"
-        />
-      </div>
+<script>
+  export let actor;
+</script>
+
+<div
+  class="mx-8 my-3  md:ml-20 md:mr-56 grid grid-cols-1 md:grid-cols-2 text-white content-center  w-full"
+>
+  <div class="flex mx-3 w-full">
+    <div class="w-20 m-auto">
+      <img
+        class="object-cover object-center rounded-full w-[64px] h-[64px]"
+        src="https://image.tmdb.org/t/p/original/{actor.profile_path}"
+        alt="img-netflix"
+      />
+    </div>
+
+    <div class="flex justify-between m-2 w-40 md:w-60">
       <div class="w-full">
-        <p class="font-medium text-lg">Darby Camp</p>
-        <div class="font-thin text-xs text-gray-500">As Emily Elizabeth</div>
+        <p class="font-bold text-[24px]">{actor.name}</p>
+        <div class="font-[400] text-[16px] text-gray-500">
+          As {actor.character}
+        </div>
       </div>
     </div>
-  </div>
-  <div class="w-3/5 m-2">
-    <h3>Production Companies</h3>
-    <p class="font-medium text-lg">Paramount</p>
-    <div class="font-thin text-xs text-gray-500">US</div>
   </div>
 </div>
