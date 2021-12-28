@@ -1,7 +1,5 @@
 <script>
-  import PlayButton from "../Common/svg-netflix/Icons/PlayButton.svelte";
   import BgNetflix from "../Common/svg-netflix/Icons/BgNetflix.svelte";
-  import BgNetflixMb from "../Common/svg-netflix/Icons/BgNetflixMb.svelte";
 </script>
 
 <div class="hidden md:block">
@@ -22,7 +20,6 @@
               class=" px-3 mt-5 items-center shadow-md rounded-lg bg-red-600  space-x-2 py-4 justify-center flex w-56"
             >
               <span class="text-white font-semibold text-xl">Get Started</span>
-              <PlayButton />
             </a>
           </div>
         </div>
@@ -53,7 +50,6 @@
               class=" px-3 mt-5 items-center shadow-md rounded-lg bg-red-600  space-x-2 py-4 justify-center flex w-full"
             >
               <span class="text-white font-semibold text-xl">Get Started</span>
-              <PlayButton />
             </a>
           </div>
         </div>
