@@ -21,7 +21,7 @@
               href="/movie"
               class=" px-3 mt-5 items-center shadow-md rounded-lg bg-red-600  space-x-2 py-4 justify-center flex w-56"
             >
-              <span class="text-white font-semibold text-xl">Play Now</span>
+              <span class="text-white font-semibold text-xl">Get Started</span>
               <PlayButton />
             </a>
           </div>
